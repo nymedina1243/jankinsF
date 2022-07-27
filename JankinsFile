@@ -7,14 +7,6 @@ pipeline {
                 bat 'dir'
             }
         }
-        stage('Promote Artifact') {
-            steps {
-                bat 'echo "hola mundo"'
-                bat 'mkdir hola mundo'
-                bat 'cd hola mundo'
-                bat 'echo aqui estoy adentro de hola mundo'
-            }
-        }
         stage('Deploy') {
             steps {
                 timeout(time: 3, unit: 'MINUTES') {
