@@ -15,5 +15,14 @@ pipeline {
                 bat 'echo aqui estoy adentro de hola mundo'
             }
         }
+        stage('Deploy') {
+            steps {
+                timeout(time: 3, unit: 'MINUTES') {
+                    retry(5) {
+                        bat 'echo hola mundo'
+                    }
+                }
+            }
+        }
     }
 }
